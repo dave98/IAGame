@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SecondaryScenes/Menu/MenuButtons.gd" type="Script" id=1]
+[ext_resource path="res://TheyPerished_49.tres" type="DynamicFont" id=2]
+
+[node name="MenuButton" type="Button"]
+margin_right = 1040.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 360, 40 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0.054902, 0.054902, 0.054902, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 5
+text = "Label"
+align = 1
+

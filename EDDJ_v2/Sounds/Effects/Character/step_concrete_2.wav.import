@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/step_concrete_2.wav-1289728f2129c10e535a95930173e1db.sample"
+
+[deps]
+
+source_file="res://Sounds/Effects/Character/step_concrete_2.wav"
+dest_files=[ "res://.import/step_concrete_2.wav-1289728f2129c10e535a95930173e1db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

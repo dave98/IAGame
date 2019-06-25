@@ -1,0 +1,110 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://SecondaryScenes/Enemies/Enemy_Skull.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost/ghost-1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/gothicvania-cemetery-files/PNG/Sprites/enemy-death/enemy-death-1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/gothicvania-cemetery-files/PNG/Sprites/enemy-death/enemy-death-2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/gothicvania-cemetery-files/PNG/Sprites/enemy-death/enemy-death-3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/gothicvania-cemetery-files/PNG/Sprites/enemy-death/enemy-death-4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/gothicvania-cemetery-files/PNG/Sprites/enemy-death/enemy-death-5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost-halo/ghost-halo-1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost-halo/ghost-halo-2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost-halo/ghost-halo-3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost-halo/ghost-halo-4.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost/ghost-2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost/ghost-3.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Castlevania/Sprites/ghost/ghost-4.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "pounce",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "looking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 20.1408
+height = 40.5926
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 22.5284
+height = 48.6178
+
+[node name="Ghost" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_horizontal_guides_": [ -16.0742, 68.4057 ],
+"_edit_vertical_guides_": [ 33.2684 ]
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+z_index = -2
+frames = SubResource( 1 )
+animation = "looking"
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 12 )
+shape = SubResource( 2 )
+
+[node name="RayCastBorde" type="RayCast2D" parent="."]
+position = Vector2( 15, 40 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+
+[node name="TimerBehavior_2" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="RayCastAttack" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 250, 0 )
+
+[node name="RayCastDamage" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 70, 0 )
+
+[node name="PositionAttack" type="Position2D" parent="."]
+position = Vector2( 30, 15 )
+
+[node name="TouchBody" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchBody"]
+position = Vector2( 0, 12 )
+shape = SubResource( 3 )
+
+[node name="TimerAttack" type="Timer" parent="."]
+process_mode = 0
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="TouchBody" to="." method="_on_TouchBody_body_entered"]
+[connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]

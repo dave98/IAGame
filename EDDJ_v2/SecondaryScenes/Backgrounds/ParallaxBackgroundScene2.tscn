@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/GrottoFiles/environment-background.png" type="Texture" id=1]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 0.1 )
+motion_mirroring = Vector2( 1750, 600 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 500, 500 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+

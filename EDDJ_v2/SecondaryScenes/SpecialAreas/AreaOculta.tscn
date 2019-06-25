@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SecondaryScenes/SpecialAreas/AreaOculta.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/Effects/SecretAreas/found_treasure.wav" type="AudioStream" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.4601, 20.7846 )
+
+[node name="AreaOculta" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_AreaOculta_body_entered"]
