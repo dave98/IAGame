@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://MarioScenes/Presentation.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/MarioSprites/parallel_background_3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Z_objects/presentation/presentation0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/MarioSprites/GrassAutotile.tres" type="TileSet" id=4]
+[ext_resource path="res://MarioEnemies/Turtle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MarioScenes/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sounds/MarioSounds/presentation.wav" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_coin.wav" type="AudioStream" id=8]
+
+[node name="Presentation" type="Control"]
+margin_left = 1.36084
+margin_right = 1.36084
+script = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 680, -30 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 650, 210 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1245182, 0, 0, 1245183, 0, 2, 1179688, 0, 0, 1179689, 0, 2, 1310718, 0, 65536, 1310719, 0, 0, 1245184, 0, 1, 1245185, 0, 1, 1245186, 0, 1, 1245187, 0, 1, 1245188, 0, 1, 1245189, 0, 1, 1245190, 0, 1, 1245191, 0, 1, 1245192, 0, 1, 1245193, 0, 1, 1245194, 0, 1, 1245195, 0, 1, 1245196, 0, 1, 1245197, 0, 1, 1245198, 0, 1, 1245199, 0, 1, 1245200, 0, 1, 1245201, 0, 1, 1245202, 0, 1, 1245203, 0, 1, 1245204, 0, 1, 1245205, 0, 1, 1245206, 0, 1, 1245207, 0, 1, 1245208, 0, 1, 1245209, 0, 1, 1245210, 0, 1, 1245211, 0, 1, 1245212, 0, 1, 1245213, 0, 1, 1245214, 0, 1, 1245215, 0, 1, 1245216, 0, 1, 1245217, 0, 1, 1245218, 0, 1, 1245219, 0, 1, 1245220, 0, 1, 1245221, 0, 1, 1245222, 0, 1, 1245223, 0, 1, 1245224, 0, 0, 1245225, 0, 65538, 1376254, 0, 65536, 1376255, 0, 65537, 1310720, 0, 65537, 1310721, 0, 65537, 1310722, 0, 65537, 1310723, 0, 65537, 1310724, 0, 65537, 1310725, 0, 65537, 1310726, 0, 65537, 1310727, 0, 65537, 1310728, 0, 65537, 1310729, 0, 65537, 1310730, 0, 65537, 1310731, 0, 65537, 1310732, 0, 65537, 1310733, 0, 65537, 1310734, 0, 65537, 1310735, 0, 65537, 1310736, 0, 65537, 1310737, 0, 65537, 1310738, 0, 65537, 1310739, 0, 65537, 1310740, 0, 65537, 1310741, 0, 65537, 1310742, 0, 65537, 1310743, 0, 65537, 1310744, 0, 65537, 1310745, 0, 65537, 1310746, 0, 65537, 1310747, 0, 65537, 1310748, 0, 65537, 1310749, 0, 65537, 1310750, 0, 65537, 1310751, 0, 65537, 1310752, 0, 65537, 1310753, 0, 65537, 1310754, 0, 65537, 1310755, 0, 65537, 1310756, 0, 65537, 1310757, 0, 65537, 1310758, 0, 65537, 1310759, 0, 65537, 1310760, 0, 65537, 1310761, 0, 65538, 1441790, 0, 131072, 1441791, 0, 131073, 1376256, 0, 131073, 1376257, 0, 131073, 1376258, 0, 131073, 1376259, 0, 131073, 1376260, 0, 131073, 1376261, 0, 131073, 1376262, 0, 131073, 1376263, 0, 131073, 1376264, 0, 131073, 1376265, 0, 131073, 1376266, 0, 131073, 1376267, 0, 131073, 1376268, 0, 131073, 1376269, 0, 131073, 1376270, 0, 131073, 1376271, 0, 131073, 1376272, 0, 131073, 1376273, 0, 131073, 1376274, 0, 131073, 1376275, 0, 131073, 1376276, 0, 131073, 1376277, 0, 131073, 1376278, 0, 131073, 1376279, 0, 131073, 1376280, 0, 131073, 1376281, 0, 131073, 1376282, 0, 131073, 1376283, 0, 131073, 1376284, 0, 131073, 1376285, 0, 131073, 1376286, 0, 131073, 1376287, 0, 131073, 1376288, 0, 131073, 1376289, 0, 131073, 1376290, 0, 131073, 1376291, 0, 131073, 1376292, 0, 131073, 1376293, 0, 131073, 1376294, 0, 131073, 1376295, 0, 131073, 1376296, 0, 131073, 1376297, 0, 131074 )
+
+[node name="TimerSelection" type="Timer" parent="."]
+one_shot = true
+
+[node name="Objects" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Turtle" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 419.836, 576.066 )
+
+[node name="Turtle2" parent="Objects" instance=ExtResource( 5 )]
+position = Vector2( 1006.95, 578.93 )
+turtle_type = 2
+
+[node name="Coin" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 537.219, 423.014 )
+
+[node name="Coin2" parent="Objects" instance=ExtResource( 6 )]
+position = Vector2( 536.052, 467.279 )
+
+[node name="Sounds" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Background" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+volume_db = -5.0
+autoplay = true
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+volume_db = -5.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 555.0
+margin_top = 403.0
+margin_right = 690.0
+margin_bottom = 447.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 135.0
+margin_bottom = 44.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 107.0
+margin_bottom = 44.0
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 107.0
+margin_bottom = 20.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Iniciar el juego"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 107.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "Salir del juego"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1054.71
+margin_top = 6.66785
+margin_right = 1267.71
+margin_bottom = 20.6679
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Alumno: José David Mamani Vilca"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

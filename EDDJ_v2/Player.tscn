@@ -1,237 +1,274 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/N_Player/Idle/Player_Idle.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_3.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_4.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_5.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/N_Player/runnig/Player_Running_6.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_01.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_02.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_03.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_04.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_05.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_06.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_07.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/N_Player/jumping/Player_Jumping_4.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_01.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_02.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_03.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_04.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_05.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_06.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_07.png" type="Texture" id=23]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_08.png" type="Texture" id=24]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_09.png" type="Texture" id=25]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_10.png" type="Texture" id=26]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_11.png" type="Texture" id=27]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_12.png" type="Texture" id=28]
-[ext_resource path="res://Sprites/N_Player/attack_2/Layer 1_sprite_13.png" type="Texture" id=29]
-[ext_resource path="res://Sprites/N_Player/jumping/Player_Jumping_2.png" type="Texture" id=30]
-[ext_resource path="res://Sprites/N_Player/prepare/Layer 1_sprite_1.png" type="Texture" id=31]
-[ext_resource path="res://Sprites/N_Player/prepare/Layer 1_sprite_2.png" type="Texture" id=32]
-[ext_resource path="res://Sprites/N_Player/prepare/Layer 1_sprite_3.png" type="Texture" id=33]
-[ext_resource path="res://Sprites/N_Player/prepare/Layer 1_sprite_4.png" type="Texture" id=34]
-[ext_resource path="res://Sprites/N_Player/damaged/player_damage_1.png" type="Texture" id=35]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_08.png" type="Texture" id=36]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_09.png" type="Texture" id=37]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_10.png" type="Texture" id=38]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_11.png" type="Texture" id=39]
-[ext_resource path="res://Sprites/N_Player/attack/Layer 1_sprite_12.png" type="Texture" id=40]
-[ext_resource path="res://Sprites/N_Player/dying/Layer 1_sprite_1.png" type="Texture" id=41]
-[ext_resource path="res://Sprites/N_Player/dying/Layer 1_sprite_2.png" type="Texture" id=42]
-[ext_resource path="res://Sprites/N_Player/dying/Layer 1_sprite_3.png" type="Texture" id=43]
-[ext_resource path="res://Sprites/N_Player/dying/Layer 1_sprite_4.png" type="Texture" id=44]
-[ext_resource path="res://Sprites/N_Player/dying/Layer 1_sprite_5.png" type="Texture" id=45]
-[ext_resource path="res://Sprite.gd" type="Script" id=46]
-[ext_resource path="res://SecondaryScenes/FadesEffects/FadeOut.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Sprites/N_Player/mario_lift/lift_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/N_Player/mario_lift/lift_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/N_Player/mario_idle/idle_0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/N_Player/mario_idle/Midle_0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/xjump0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/xjump1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/xjump2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/xjump3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/N_Player/mario_fall/fall_0.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/N_Player/mario_kick/Mkick_0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/N_Player/mario_kick/kick_0.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/N_Player/mario_jump/Mjump_0.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/N_Player/mario_walk/walk0.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/N_Player/mario_walk/walk1.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/N_Player/mario_death/death_0.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/N_Player/mario_death/death_1.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/N_Player/mario_run/Mrun_0.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/N_Player/mario_run/Mrun_1.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/N_Player/mario_sjump/jump_0.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/N_Player/mario_walk/Mwalk_0.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/N_Player/mario_walk/Mwalk_1.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/N_Player/mario_walk/Mwalk_2.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/N_Player/mario_run/run_0.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/N_Player/mario_run/run_1.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/N_Player/mario_jump/jump_0.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/N_Player/mario_fall/Mfall_0.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/N_Player/mario_sjump/Msjump_0.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/Mxjump_0.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/Mxjump_1.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/Mxjump_2.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/N_Player/mario_xjump/Mxjump_3.png" type="Texture" id=32]
+[ext_resource path="res://Sprite.gd" type="Script" id=33]
+[ext_resource path="res://Sounds/MarioSounds/world_1_1.wav" type="AudioStream" id=34]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_jump.wav" type="AudioStream" id=35]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp.wav" type="AudioStream" id=36]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp_koopa_kid.wav" type="AudioStream" id=37]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp_no_damage.wav" type="AudioStream" id=38]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_lost_a_life.wav" type="AudioStream" id=39]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_power-up.wav" type="AudioStream" id=40]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_reserve_item_store.wav" type="AudioStream" id=41]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_pipe.wav" type="AudioStream" id=42]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_1-up.wav" type="AudioStream" id=43]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_course_clear.wav" type="AudioStream" id=44]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "Parpadear"
+length = 0.15
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.07, 0.14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Idle",
+"name": "mario_lift_1",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "mario_grow",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "mario_idle_1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "Run",
-"speed": 9.0
+"name": "mario_xjump_1",
+"speed": 15.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "Attack_1",
-"speed": 10.0
+"name": "mario_fall_1",
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Attack_2",
-"speed": 10.0
+"name": "mario_kick_2",
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Fall",
+"name": "mario_idle_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "mario_dwarf",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "mario_kick_1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
-"name": "BigJump",
+"name": "mario_jump_2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Attack_4",
+"name": "mario_walk_1",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "mario_death",
+"speed": 11.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "mario_run_2",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "mario_sjump_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "mario_walk_2",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "mario_run_1",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "mario_jump_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": true,
+"name": "mario_fall_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "mario_sjump_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "mario_xjump_2",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": false,
-"name": "DistanceAttack_1",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 30 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "Prepare",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 35 ) ],
-"loop": true,
-"name": "Stunt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": true,
-"name": "Attack_3",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
-"loop": false,
-"name": "Dying",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Sliding",
-"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 20.0
-height = 54.0
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 11.6638
+height = 9.30989
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 7.14193
+height = 12.4718
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -0.397213 )
-collision_mask = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_horizontal_guides_": [ 45.1139 ]
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+anims/Parpadear = SubResource( 1 )
+
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.8, 1.8 )
-frames = SubResource( 1 )
-animation = "Idle"
-script = ExtResource( 46 )
+frames = SubResource( 2 )
+animation = "mario_idle_1"
+playing = true
+script = ExtResource( 33 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -4 )
-shape = SubResource( 2 )
+position = Vector2( 0, 1 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 0.965668, 1.00138 )
+scale = Vector2( 1.8, 1.8 )
+shape = SubResource( 4 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.7, 0.7 )
+limit_left = -100
+limit_top = -500
+limit_bottom = 100
 smoothing_enabled = true
+editor_draw_limits = true
 
-[node name="TimerAttack" type="Timer" parent="."]
-wait_time = 0.9
+[node name="TimerInvulnerability" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
-
-[node name="TimerStunt" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="PositionDistanceAttack" type="Position2D" parent="."]
-position = Vector2( 56, 0 )
-
-[node name="RayCastBalancingUp" type="RayCast2D" parent="."]
-position = Vector2( 15, -45 )
-enabled = true
-cast_to = Vector2( 20, 0 )
-collide_with_areas = true
-
-[node name="RayCastBalancingDown" type="RayCast2D" parent="."]
-position = Vector2( 15, -40 )
-enabled = true
-cast_to = Vector2( 15, 0 )
-
-[node name="SaludBar" type="ProgressBar" parent="."]
-modulate = Color( 0.933333, 1, 0, 1 )
-margin_left = -55.0
-margin_top = -80.0
-margin_right = 55.0
-margin_bottom = -66.0
-rect_scale = Vector2( 1, 1.5 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-max_value = 30.0
-value = 10.0
-
-[node name="AmmoBar" type="ProgressBar" parent="."]
-modulate = Color( 0.458824, 0.317647, 1, 1 )
-margin_left = -55.0
-margin_top = -65.0
-margin_right = 55.0
-margin_bottom = -51.0
-
-[node name="LOpen" type="Label" parent="."]
-margin_left = -95.0
-margin_top = 50.0
-margin_right = -76.0
-margin_bottom = 65.0
-text = "O: "
-
-[node name="NOpen" type="Label" parent="."]
-margin_left = -80.0
-margin_top = 50.0
-margin_right = -36.0
-margin_bottom = 65.0
-text = "0.0000"
-
-[node name="LCon" type="Label" parent="."]
-margin_left = -15.0
-margin_top = 50.0
-margin_right = 4.0
-margin_bottom = 65.0
-text = "C: "
-
-[node name="NCon" type="Label" parent="."]
-margin_top = 50.0
-margin_right = 44.0
-margin_bottom = 65.0
-text = "0.0000"
-
-[node name="LNeu" type="Label" parent="."]
-margin_left = 65.0
-margin_top = 50.0
-margin_right = 84.0
-margin_bottom = 65.0
-text = "N: "
-
-[node name="NNeu" type="Label" parent="."]
-margin_left = 80.0
-margin_top = 50.0
-margin_right = 124.0
-margin_bottom = 65.0
-text = "0.0000"
-
-[node name="Effect" parent="." instance=ExtResource( 47 )]
 
 [node name="Tween" type="Tween" parent="."]
 
-[connection signal="timeout" from="TimerAttack" to="." method="_on_TimerAttack_timeout"]
-[connection signal="timeout" from="TimerStunt" to="." method="_on_TimerStunt_timeout"]
+[node name="EventTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Ambiance" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 34 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 35 )
+volume_db = -5.0
+
+[node name="Stomp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 36 )
+volume_db = -5.0
+
+[node name="Stomp_2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 37 )
+volume_db = -5.0
+
+[node name="Stomp_3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 38 )
+volume_db = -5.0
+
+[node name="Lost" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 39 )
+volume_db = -5.0
+
+[node name="PowerUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 40 )
+volume_db = -5.0
+
+[node name="SamePowerUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 41 )
+volume_db = -5.0
+
+[node name="LostPowerUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 42 )
+volume_db = -5.0
+
+[node name="LiveUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 43 )
+volume_db = -5.0
+
+[node name="LevelEnded" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 44 )
+volume_db = -5.0
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

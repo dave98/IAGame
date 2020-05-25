@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/presentation.wav-a224eb88d9f0ec9edda9b9f9a7df3faa.sample"
+
+[deps]
+
+source_file="res://Sounds/MarioSounds/presentation.wav"
+dest_files=[ "res://.import/presentation.wav-a224eb88d9f0ec9edda9b9f9a7df3faa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

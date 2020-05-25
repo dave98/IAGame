@@ -1,0 +1,132 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://MarioEnemies/Turtle.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield_death/death_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield_death/death_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield_death/death_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_walk/walk_0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield/shield_0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield/shield_1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield/shield_2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_shield/shield_3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/K_Enemy/koopa_green_walk/walk_1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield_death/death_0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield_death/death_1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield_death/death_2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/K_Enemy/koopa_walk/walk_0.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield/shield_0.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield/shield_1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield/shield_2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/K_Enemy/koopa_shield/shield_3.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/K_Enemy/koopa_walk/walk_1.png" type="Texture" id=19]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_shell_ricochet.wav" type="AudioStream" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "koopa_death_2",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "koopa_idle_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "koopa_shield_idle_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "koopa_shield_walk_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "koopa_walk_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "koopa_death_1",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "koopa_idle_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "koopa_shield_idle_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "koopa_shield_walk_1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "koopa_walk_1",
+"speed": 7.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.8179
+height = 11.1056
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 12.8222
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 17.2272
+height = 14.169
+
+[node name="Turtle" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "koopa_idle_1"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 10 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2DShield" type="CollisionShape2D" parent="."]
+position = Vector2( 0.225937, 3.22194 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="RayCastBorde" type="RayCast2D" parent="."]
+position = Vector2( 13.5023, 13.8683 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+
+[node name="TouchBody" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchBody"]
+position = Vector2( -0.0652957, 3.32183 )
+shape = SubResource( 4 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="stomp" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 20 )
+volume_db = -3.0
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 21 )
+volume_db = -5.0
+
+[connection signal="body_entered" from="TouchBody" to="." method="_on_TouchBody_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

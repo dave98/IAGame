@@ -15,9 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="El Diario de Jonathan EP0"
-run/main_scene="res://StartMenuV2.tscn"
-config/icon="res://icon.png"
+config/name="Super Mario World"
+run/main_scene="res://MarioScenes/Presentation.tscn"
+config/icon="res://icon_2.png"
+
+[autoload]
+
+Global="*res://MainScenes/Global.tscn"
+SceneChanger="*res://MarioScenes/SceneChanger.tscn"
 
 [display]
 

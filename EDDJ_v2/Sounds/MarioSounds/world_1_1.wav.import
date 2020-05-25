@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/world_1_1.wav-088f8bc7bf84568fb06e239bb372cf7d.sample"
+
+[deps]
+
+source_file="res://Sounds/MarioSounds/world_1_1.wav"
+dest_files=[ "res://.import/world_1_1.wav-088f8bc7bf84568fb06e239bb372cf7d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

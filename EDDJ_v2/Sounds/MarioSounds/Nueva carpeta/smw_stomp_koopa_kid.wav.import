@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw_stomp_koopa_kid.wav-17979a34f525d83f6f5354807b952955.sample"
+
+[deps]
+
+source_file="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp_koopa_kid.wav"
+dest_files=[ "res://.import/smw_stomp_koopa_kid.wav-17979a34f525d83f6f5354807b952955.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://MarioScenes/Box.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Z_objects/box_idle/idle_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Z_objects/box_idle/idle_1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Z_objects/box_idle/idle_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Z_objects/box_idle/idle_3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Z_objects/box_done/done_0.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "done",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.9876, 15.96 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.89515, 16.4801 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 19.3328, 10.4965 )
+
+[node name="Box" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "idle"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 2.5 )
+shape = SubResource( 3 )
+
+[node name="Area2DEnemies" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DEnemies"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2DEnemies" to="." method="_on_Area2DEnemies_body_entered"]

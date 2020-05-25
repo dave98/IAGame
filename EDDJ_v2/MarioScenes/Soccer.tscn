@@ -1,0 +1,151 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://MarioScenes/Soccer.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/K_Enemy/soccer_see/see_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/K_Enemy/soccer_turn/turn_0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/K_Enemy/soccer_run/run_0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/K_Enemy/soccer_run/run_1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/K_Enemy/soccer_hitted/hitted_5.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/K_Enemy/soccer_jump/jump_1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/K_Enemy/soccer_jump/jump_0.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/K_Enemy/soccer_turn/turn_1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/K_Enemy/soccer_turn/turn_2.png" type="Texture" id=15]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_shell_ricochet.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp_koopa_kid.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_stomp_no_damage.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sounds/MarioSounds/Nueva carpeta/smw_spring_jump.wav" type="AudioStream" id=19]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "soccer_see",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "soccer_idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "soccer_run",
+"speed": 17.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "soccer_hitted",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "soccer_death",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "soccer_jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "soccer_fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "soccer_turn",
+"speed": 8.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.0
+height = 2.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 169.145
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 330.074
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 24.0
+height = 0.0
+
+[node name="Soccer" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "soccer_idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 8 )
+shape = SubResource( 1 )
+
+[node name="AreaAction" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAction"]
+position = Vector2( 0, 2 )
+shape = SubResource( 5 )
+
+[node name="AreaDetection" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
+position = Vector2( 0, 2 )
+shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 3 )
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="run" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 16 )
+volume_db = -5.0
+
+[node name="hit_1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 17 )
+volume_db = -5.0
+
+[node name="hit_2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 18 )
+volume_db = -5.0
+
+[node name="jump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 19 )
+volume_db = -5.0
+
+[node name="TimeAttack" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimeJump" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="frame_changed" from="Sprite" to="." method="_on_Sprite_frame_changed"]
+[connection signal="body_entered" from="AreaAction" to="." method="_on_AreaAction_body_entered"]
+[connection signal="body_entered" from="AreaDetection" to="." method="_on_AreaDetection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_AreaDetection_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
